@@ -4,7 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chromed Disco</title>
-  <style>
+  .chrome-text {
+  font-size: 72px;
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d9d9d9 25%,
+    #888 50%,
+    #e6e6e6 75%,
+    #ffffff 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 2px 0 #000,
+    0 6px 12px rgba(0,0,0,0.6),
+    0 0 25px rgba(255,255,255,0.15);
+}
+
+.chrome-text span {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  display: block;
+  margin-top: 10px;
+
+  background: linear-gradient(
+    180deg,
+    #ccc,
+    #888
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}<style>
     :root{
       --bg:#050505;
       --panel:#0a0a0a;
