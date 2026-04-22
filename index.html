@@ -1,241 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chromed Disco</title>
+export default function ChromedDiscoWebsite() {
+  const featuredDrops = [
+    {
+      name: "Midnight Chrome Tee",
+      price: "$48",
+      tag: "Core Drop",
+      image:
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Disco Signal Hoodie",
+      price: "$88",
+      tag: "Limited",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "After Hours Cap",
+      price: "$36",
+      tag: "Accessory",
+      image:
+        "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=80",
+    },
+  ];
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* HERO */}
+      <section className="relative overflow-hidden border-b border-white/10">
+        {/* chrome glow + disco reflections */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.25),transparent_25%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.15),transparent_25%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.1),transparent_30%)]" />
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
-}
+        {/* floating disco balls */}
+        <div className="absolute top-10 left-10 w-24 h-24 rounded-full border border-white/20 bg-[conic-gradient(from_0deg,#fff,#bbb,#fff)] opacity-40 blur-[1px]" />
+        <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border border-white/20 bg-[conic-gradient(from_0deg,#fff,#999,#fff)] opacity-30 blur-[1px]" />
 
-/* NAV */
-.nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 60px;
-  position:fixed;
-  width:100%;
-  z-index:10;
-}
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2">
+          <div className="flex flex-col justify-center">
+            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-white/60">
+              Chromed Disco
+            </p>
+            <h1 className="max-w-xl text-5xl font-semibold leading-tight md:text-7xl">
+              Polished. Reflective. Unseen.
+            </h1>
+            <p className="mt-6 max-w-lg text-base leading-7 text-white/70 md:text-lg">
+              Chrome textures. Disco energy. Limited pieces designed to catch light
+              and attention.
+            </p>
 
-.nav img {
-  height:40px;
-}
+            <div className="mt-8 flex gap-4">
+              <a
+                href="#shop"
+                className="rounded-2xl bg-gradient-to-r from-white to-gray-300 px-6 py-3 text-sm font-medium text-black"
+              >
+                Enter the Drop
+              </a>
+            </div>
+          </div>
 
-.nav-links {
-  display:flex;
-  gap:30px;
-  font-size:12px;
-  letter-spacing:2px;
-}
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
+              className="rounded-[2rem] object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
-/* HERO */
-.hero {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:120px 60px;
-  min-height:100vh;
-  background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.08), transparent 40%), #000;
-  overflow:hidden;
-}
+      {/* SHOP */}
+      <section id="shop" className="mx-auto max-w-7xl px-6 py-16">
+        <h2 className="text-3xl font-semibold mb-10">Featured Drop</h2>
 
-/* LEFT */
-.hero-content {
-  max-width:500px;
-  z-index:2;
-}
+        <div className="grid gap-6 md:grid-cols-3">
+          {featuredDrops.map((item) => (
+            <div
+              key={item.name}
+              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/10 to-black"
+            >
+              <img
+                src={item.image}
+                className="h-96 w-full object-cover transition group-hover:scale-105"
+              />
 
-.tagline {
-  letter-spacing:4px;
-  font-size:12px;
-  color:#aaa;
-  margin-bottom:20px;
-}
+              <div className="p-6">
+                <p className="text-xs uppercase text-white/40">{item.tag}</p>
+                <div className="flex justify-between mt-2">
+                  <h3>{item.name}</h3>
+                  <p>{item.price}</p>
+                </div>
+                <button className="mt-4 w-full border border-white/20 rounded-xl py-2 hover:border-white/60">
+                  View Product
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-.hero-logo {
-  width:420px;
-  margin-bottom:20px;
-  filter: drop-shadow(0 10px 30px rgba(255,255,255,0.15));
-}
+      {/* STORY */}
+      <section className="mx-auto max-w-5xl px-6 py-20 text-center">
+        <h2 className="text-4xl font-semibold">Everyone wants in.</h2>
+        <p className="text-white/60 mt-2">Given to few.</p>
 
-.subtext {
-  color:#bbb;
-  line-height:1.6;
-  margin-bottom:30px;
-}
+        <p className="mt-6 text-white/70 leading-7">
+          Chromed Disco is built on reflection — light, energy, movement. Inspired by
+          late nights, chrome finishes, and the people who stand out without trying.
+        </p>
+      </section>
 
-.buttons {
-  display:flex;
-  gap:15px;
-}
+      {/* EMAIL */}
+      <section className="mx-auto max-w-xl px-6 pb-20 text-center">
+        <h3 className="text-2xl mb-4">Get early access</h3>
 
-.btn {
-  padding:14px 24px;
-  border-radius:25px;
-  font-size:12px;
-  letter-spacing:2px;
-  cursor:pointer;
-}
-
-.btn.primary {
-  background:#fff;
-  color:#000;
-}
-
-.btn.secondary {
-  border:1px solid #555;
-}
-
-/* DISCO IMAGES */
-.hero-visual {
-  position:relative;
-  width:50%;
-}
-
-.disco {
-  position:absolute;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 40px 80px rgba(0,0,0,0.7);
-}
-
-.disco.big {
-  width:400px;
-  right:60px;
-  top:50px;
-}
-
-.disco.small {
-  width:200px;
-  right:0;
-  bottom:80px;
-}
-
-/* PRODUCTS */
-.products {
-  padding:80px 60px;
-}
-
-.products h2 {
-  margin-bottom:30px;
-  letter-spacing:4px;
-}
-
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.card {
-  background:#111;
-  padding:20px;
-  border-radius:15px;
-}
-
-.card img {
-  width:100%;
-  border-radius:10px;
-}
-
-.card h3 {
-  margin-top:10px;
-}
-
-.price {
-  color:#aaa;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .hero {
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-visual {
-    width:100%;
-    margin-top:40px;
-  }
-
-  .grid {
-    grid-template-columns:1fr;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<div class="nav">
-  <img src="logo.png">
-  <div class="nav-links">
-    <div>SHOP</div>
-    <div>DROP 001</div>
-    <div>LOOKS</div>
-    <div>ABOUT</div>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-
-  <div class="hero-content">
-    <p class="tagline">NIGHT IS OUR CANVAS.</p>
-
-    <img src="logo.png" class="hero-logo">
-
-    <p class="subtext">
-      LIMITED DROPS. PREMIUM MATERIALS.<br>
-      DESIGNED FOR NIGHTS THAT TURN INTO LEGENDS.
-    </p>
-
-    <div class="buttons">
-      <div class="btn primary">SHOP DROP 001</div>
-      <div class="btn secondary">VIEW THE LOOKBOOK</div>
+        <div className="flex gap-3">
+          <input
+            placeholder="Enter your email"
+            className="w-full bg-black border border-white/20 rounded-xl px-4 py-3"
+          />
+          <button className="bg-white text-black px-5 rounded-xl">Join</button>
+        </div>
+      </section>
     </div>
-  </div>
-
-  <div class="hero-visual">
-    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819" class="disco big">
-    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" class="disco small">
-  </div>
-
-</section>
-
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>DROP 001</h2>
-
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975922071-a23bfa2cbdcb">
-      <h3>Midnight Chrome Tee</h3>
-      <div class="price">$48</div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716b">
-      <h3>After Dark Hoodie</h3>
-      <div class="price">$98</div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-      <h3>Chrome Logo Cap</h3>
-      <div class="price">$38</div>
-    </div>
-  </div>
-</section>
-
-</body>
-</html>
+  );
+}
