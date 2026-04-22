@@ -652,38 +652,50 @@
   font-weight: 900;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 0;
 
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    #d9d9d9 25%,
-    #888 50%,
-    #e6e6e6 75%,
+    #f4f4f4 12%,
+    #cfcfcf 24%,
+    #ffffff 36%,
+    #8e8e8e 48%,
+    #f8f8f8 62%,
+    #bdbdbd 76%,
     #ffffff 100%
   );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 
-  text-shadow:
-    0 2px 0 #000,
-    0 6px 12px rgba(0,0,0,0.6),
-    0 0 25px rgba(255,255,255,0.15);
+  filter: drop-shadow(0 2px 0 rgba(255,255,255,0.35))
+          drop-shadow(0 8px 16px rgba(0,0,0,0.65));
 }
 
 .chrome-text span {
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: 6px;
   display: block;
   margin-top: 10px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 6px;
 
   background: linear-gradient(
     180deg,
-    #ccc,
-    #888
+    #ffffff 0%,
+    #d9d9d9 25%,
+    #8c8c8c 55%,
+    #ffffff 100%
   );
 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  filter: drop-shadow(0 2px 0 rgba(255,255,255,0.25))
+          drop-shadow(0 6px 12px rgba(0,0,0,0.55));
+}
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }</style>
